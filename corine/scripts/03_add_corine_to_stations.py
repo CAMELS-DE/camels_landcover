@@ -26,5 +26,8 @@ def save_corine_to_stations():
         land_cover_path = os.path.join(output_path, "land_cover", "corine.csv")
 
         # Save the land cover data
-        row.to_csv(land_cover_path, index=False)
-        
+        corine.loc[corine["camels_id"] == row["camels_id"]].to_csv(land_cover_path, index=False)
+
+
+if __name__ == "__main__":
+    save_corine_to_stations()
