@@ -31,4 +31,4 @@ RUN R -e "install.packages('exactextractr')"
 WORKDIR /scripts
 
 # Run sh script to process CORINE
-CMD ["/bin/bash", "process_isric.sh"]
+CMD ["/bin/bash", "process_corine.sh"]
