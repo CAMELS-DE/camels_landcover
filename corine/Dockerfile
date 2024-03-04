@@ -26,10 +26,9 @@ RUN pip install -e /camelsp
 # Install R dependencies for corine
 RUN apt-get install -y libudunits2-dev libgdal-dev libharfbuzz-dev libfribidi-dev
 RUN R -e "install.packages('exactextractr')"
-RUN R -e "install.packages('tidyverse')"
 
 # Change working directory
 WORKDIR /scripts
 
 # Run sh script to process CORINE
-CMD ["/bin/bash", "process_corine.sh"]
+CMD ["/bin/bash", "process_isric.sh"]
