@@ -45,7 +45,7 @@ catchments <- st_transform(catchments, st_crs(corine_main_classes))
 print("Extracting the raster data for all catchments ...")
 extracted_rast <- exact_extract(corine_main_classes, catchments,
                                 fun = "frac", force_df = TRUE,
-                                append_cols = "id")
+                                append_cols = "id", progress = FALSE)
 
 # Define the names of the main classes
 main_class_names <- c("artificial_surfaces", "agricultural_areas", "forests_and_seminatural_areas", "wetlands", "water_bodies")
