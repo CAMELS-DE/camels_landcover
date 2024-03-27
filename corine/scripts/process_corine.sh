@@ -20,10 +20,11 @@ Rscript /scripts/02_extract_corine.R
 cp /scripts/02_extract_corine.R /output_data/scripts/02_extract_corine.R
 echo "[$(date +%T)] Saved extracted CORINE data for all CAMELS-DE stations with 02_extract_corine.R"
 
-# Save the extracted CORINE data to camelsp stations
-python /scripts/03_save_corine_to_stations.py
-cp /scripts/03_save_corine_to_stations.py /output_data/scripts/03_save_corine_to_stations.py
-echo "[$(date +%T)] Saved extracted CORINE data to CAMELS-DE stations with 03_save_corine_to_stations.py"
+# Copy the output data to the camelsp output directory
+echo "[$(date +%T)] Copying the extracted and postprocessed data to the camelsp output directory..."
+mkdir -p /camelsp/output_data/raw_catchment_attributes/landcover/corine
+cp -r /output_data/* /camelsp/output_data/raw_catchment_attributes/landcover/corine/
+echo "[$(date +%T)] Copied the extracted and postprocessed data to the camelsp output directory"
 
 # Change permissions of the output data
 chmod -R 777 /camelsp/output_data/
