@@ -49,6 +49,6 @@ po/*~
 rsconnect/
 
 # input and output data
-!input_data/README.md
+!README.md
 input_data/
 output_data/
