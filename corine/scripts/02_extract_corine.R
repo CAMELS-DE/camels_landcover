@@ -47,11 +47,14 @@ extracted_rast <- exact_extract(corine_main_classes, catchments,
                                 fun = "frac", force_df = TRUE,
                                 append_cols = "id", progress = FALSE)
 
+# Convert fraction to percentage
+extracted_rast[, -1] <- extracted_rast[, -1] * 100
+
 # Define the names of the main classes
 main_class_names <- c("artificial_surfaces", "agricultural_areas", "forests_and_seminatural_areas", "wetlands", "water_bodies")
 
 # Rename the columns
-colnames(extracted_rast)[-1] <- paste("frac", main_class_names, sep = "_")
+colnames(extracted_rast)[-1] <- paste(main_class_names, "perc", sep = "_")
 colnames(extracted_rast)[1] <- "camels_id"
 
 # Save the extracted data
