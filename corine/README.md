@@ -3,25 +3,27 @@
 ## Description
 
 Dockerized tool to extract and process data from the CORINE land cover tif file for CAMELS-DE.  
+Implemented following the [tool-specs](https://vforwater.github.io/tool-specs/).  
 A .csv file is created in the `output_data` folder containing the area percentage of land cover classes in each catchment. For CAMELS-DE we only use the superclasses of CORINE, the extracted variable are listed below.  
-The results are copied to the camelsp `output_data` directory, where other tools process the data further and organize it in the folder structure.
+
+The created file `landcover_attributes.csv` is exactly structured as the `CAMELS_DE_landcover_attributes.csv` file in the CAMELS-DE dataset and therefor is directly compatible with CAMELS-DE.
 
 ## Container
 
 ### Build the container
 
 ```bash
-docker build -t corine .
+docker build -t tbr_landcover_corine .
 ```
 
 ### Run the container
 
 Follow the instructions in `input_data/README.md` to add the necessary input data to run the tool. 
 
-To run the container, the local `input_data`, `output_data`, `scripts` and `camelsp/output_data` directories have to be mounted inside the container:
+To run the container, the local `in` and `out` directories have to be mounted inside the container:
 
 ```bash
-docker run -v ./input_data:/input_data -v ./output_data:/output_data -v ./scripts:/scripts -v /path/to/local/camelsp/output_data:/camelsp/output_data -it --rm corine
+docker run -it --rm -v ./in:/in -v ./out:/out -e TOOL_RUN=landcover_attributes_corine tbr_landcover_corine
 ```
 
 ## Output variables
