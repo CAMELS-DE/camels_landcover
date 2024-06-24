@@ -1,0 +1,12 @@
+{
+    "landcover_attributes_corine": {
+        "parameters": {
+            "id_field_name": "id"
+        },
+        "data": {
+            "corine_tif": "/in/U2018_CLC2018_V2020_20u1.tif",
+            "corine_dbf": "/in/U2018_CLC2018_V2020_20u1.tif.vat.dbf",
+            "catchments": "/in/catchments.gpkg"
+        }
+    }
+}
