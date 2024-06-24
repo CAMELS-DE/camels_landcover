@@ -68,8 +68,8 @@ extract_corine_landcover <- function(corine, corine_dbf, catchments, id_field_na
   colnames(extracted_rast)[1] <- "gauge_id" # camels_de: always gauge_id
 
   # Save the extracted data
-  print("Saving the extracted data to /out/corine_extracted.csv ...")
-  write.csv(extracted_rast, "/out/corine_extracted.csv", row.names = FALSE)
+  print("Saving the extracted data to /out/landcover_attributes.csv ...")
+  write.csv(extracted_rast, "/out/landcover_attributes.csv", row.names = FALSE)
 }
 
 # set user permissions for the output directory
