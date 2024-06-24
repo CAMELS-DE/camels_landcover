@@ -18,7 +18,9 @@ docker build -t tbr_landcover_corine .
 
 ### Run the container
 
-Follow the instructions in `input_data/README.md` to add the necessary input data to run the tool. 
+Follow the instructions in `input_data/README.md` to add the necessary input data to run the tool.
+
+Define input `parameter` and `data` in `in/input.json` accoring to `src/tool.yml`.
 
 To run the container, the local `in` and `out` directories have to be mounted inside the container:
 
