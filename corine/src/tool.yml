@@ -1,0 +1,30 @@
+tools:
+  landcover_attributes_corine:
+    title: CORINE Land Cover Attributes for CAMELS-DE
+    description: Process CORINE Land Cover data to extract land cover attributes for CAMELS-DE.
+    version: 0.1
+    parameters:
+      id_field_name:
+        example: "gauge_id"
+        type: string
+        description: Property name in the catchments file that contains the CAMELS-DE catchment IDs.
+    data:
+      corine_tif:
+        example: in/U2018_CLC2018_V2020_20u1.tif
+        extension: 
+         - .tif
+         - .tiff
+        description: Corine Land Cover 2018 (CLC2018) raster file in TIFF format, see instructions in in/README.md.
+        citation: "https://doi.org/10.2909/960998c1-1870-4e82-8051-6485205ebbac"
+      corine_dbf:
+        example: in/U2018_CLC2018_V2020_20u1.tif.vat.dbf
+        extension: 
+         - .dbf
+        description: Corine Land Cover 2018 (CLC2018) attribute table in DBF format, see instructions in in/README.md.
+      catchments:
+        example: in/catchments.gpkg
+        extension:
+         - .gpkg
+         - .geojson
+         - .shp
+        description: Geometry file containing catchments for which to extract land cover attributes.
