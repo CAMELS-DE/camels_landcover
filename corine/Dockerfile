@@ -24,7 +24,6 @@ RUN R -e "install.packages('exactextractr')"
 
 # create the tool input structure
 RUN mkdir /in
-COPY ./in /in
 RUN mkdir /out
 RUN mkdir /src
 COPY ./src /src
