@@ -19,8 +19,8 @@ RUN R -e "remotes::install_github('VForWaTer/json2aRgs')"
 # RUN rm json2aRgs_0.3.0.tar.gz
 
 # Install R dependencies for corine
-RUN apt-get install -y libudunits2-dev libgdal-dev libharfbuzz-dev libfribidi-dev
-RUN R -e "install.packages('exactextractr')"
+RUN apt-get install -y libudunits2-dev libgdal-dev libharfbuzz-dev libfribidi-dev libabsl-dev
+RUN R -e "install.packages('exactextractr', dependencies=TRUE)"
 
 # create the tool input structure
 RUN mkdir /in
